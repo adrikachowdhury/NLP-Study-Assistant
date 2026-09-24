@@ -1,0 +1,13 @@
+# Keeps Gemini API key out of GitHub
+.env
+
+# Prevents the entire Python venv from being uploaded
+.venv/
+
+# Prevents Python's temporary compiled files from being uploaded
+__pycache__/
+
+sanity_check.py
+
+# this file tells Git which files/folders it should ignore when preparing to upload on GitHub
+# prevents unnecessary files from being uploaded
