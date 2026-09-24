@@ -48,7 +48,7 @@ nlp-study-assistant/
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/adrikachowdhury/NLP-Study-Assistant.git
 cd nlp-study-assistant
 ```
 
@@ -181,6 +181,20 @@ Building this project helped me gain hands-on experience with:
 * Implementing retry logic with exponential backoff
 * Testing and debugging an AI-powered application
 * Documenting a project for future users and developers
+
+## Reflection
+
+### Prompt Design
+
+Designing the system prompt taught me that an LLM's behavior depends heavily on how its instructions are written. I used a system prompt to define the assistant's role, target audience, tone, and learning approach. I also created reusable prompt templates for concept explanations, practice questions, and feedback so that different learning tasks could follow a consistent structure.
+
+### Conversation State Management
+
+I learned that conversation state involves more than simply storing previous messages. The application maintains local conversation history while Gemini uses an interaction ID to continue the conversation across API requests. This also made it important to reset both forms of state when the `/clear` command is used.
+
+### API Cost Awareness
+
+Working with the Gemini API showed me that API usage is subject to quotas and limits. During testing, I reached the available daily request limit, which helped me understand why unnecessary API calls should be avoided. I also learned to distinguish temporary API errors from quota exhaustion so that the application does not repeatedly retry a request when retrying will not help.
 
 ## Future Improvements
 
