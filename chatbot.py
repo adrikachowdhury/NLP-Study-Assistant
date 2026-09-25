@@ -1,6 +1,6 @@
 from google import genai # gemini's SDK
 from config import GEMINI_API_KEY #API key that config.py already loaded
-from prompts import SYSTEM_PROMPT
+from prompts import SYSTEM_PROMPT, concept_prompt
 import time
 
 # Check that the API key exists
@@ -65,9 +65,9 @@ def clear_conversation():
     conversation.clear_history()
     previous_interaction_id = None
 
-def ask_gemini(question): # reusability- not repeating the same API call code for every question
+def ask_gemini(question, use_concept_prompt=False): # reusability- not repeating the same API call code for every question
 
-    # handles empty/whitespaced input
+    # handles empty/whitespaced inputalse
     # checks if input is empty
     if not question.strip(): # removes whitespace from the beginning and end
         print("Please enter a valid question.")
@@ -85,6 +85,13 @@ def ask_gemini(question): # reusability- not repeating the same API call code fo
 
     for attempt in range(3):
         try:
+
+            # normal queries are passed to the concept prompt
+            if use_concept_prompt:
+                user_ques = concept_prompt(question)
+            else:
+                user_ques = question
+
             """SEND A QUESTION/REQUEST TO GEMINI API"""
             # using the client object
             # creating 'streaming interaction' with the model
@@ -93,7 +100,7 @@ def ask_gemini(question): # reusability- not repeating the same API call code fo
             # asks it to return the response as a stream
             stream = client.interactions.create( # sends req to Gemini
                 model="gemini-3.6-flash", # tells Gemini which model to use
-                input=f"{SYSTEM_PROMPT}\n\n{question}", # question to ask
+                input=f"{SYSTEM_PROMPT}\n\n{user_ques}", # question to ask
                 previous_interaction_id=previous_interaction_id,
                 stream=True
             )

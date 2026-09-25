@@ -87,4 +87,6 @@ while True:
         print("Goodbye!")
         break
 
-    ask_gemini(user_input)
+    # because normal queries are passed under concept prompt
+    # but no for other commands there's no 2nd argument
+    ask_gemini(user_input, use_concept_prompt=True)
