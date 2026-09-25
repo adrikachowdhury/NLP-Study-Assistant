@@ -116,12 +116,12 @@ You can also type a normal NLP question without using a command. The assistant w
 
 The application follows a simple flow:
 
-1. **User input** - The user enters an NLP question or selects a command.
+1. **User input** - The user enters a question or selects a command.
 2. **Input validation** - The application checks whether the input is valid before processing it.
-3. **Prompt generation** - For practice and feedback modes, reusable prompt templates generate the appropriate instructions.
+3. **Prompt generation** - For learning, practice, and feedback modes, reusable prompt templates generate the appropriate instructions.
 4. **Gemini API request** - The application sends the request to Gemini using the Google GenAI SDK.
 5. **Streaming response** - Gemini's response is received and displayed incrementally as it is generated.
-6. **Conversation continuity** - Gemini interaction IDs are used to maintain context across conversations.
+6. **Conversation continuity** - Gemini interaction IDs are used to maintain context across interactions.
 7. **History management** - User and assistant messages are stored locally and can be viewed, summarised, trimmed, or cleared.
 8. **Error handling** - Temporary API errors are retried automatically, while other errors are reported with user-friendly messages.
 
@@ -131,7 +131,7 @@ The application includes error handling for common input and API-related problem
 
 * **Empty input** - Prevents empty or whitespace-only questions from being submitted.
 * **Invalid `/trim` input** - Handles non-numeric or invalid values when specifying the number of messages to keep.
-* **Temporary API errors** - Retries certain errors such as rate limits, service unavailability, and temporary high-demand responses.
+* **Temporary API errors** - Retries certain temporary errors such as service unavailability and high-demand responses.
 * **Exponential backoff** - Waits progressively longer between retry attempts to give temporary issues time to recover.
 * **Daily API quota** - Detects when the Gemini API request quota has been reached and displays a clear message to the user.
 * **Other API errors** - Displays a user-friendly error message instead of allowing the application to crash.
@@ -139,7 +139,7 @@ The application includes error handling for common input and API-related problem
 
 ## Example Interaction
 
-The following examples demonstrate the assistant's main interactions, including NLP concept explanations, conversation continuity, practice questions and feedback, and handling of off-topic questions. The corresponding screenshots are available in the `screenshots/` folder.
+The following examples demonstrate the assistant's main interactions, including NLP concept explanations, learning mode, conversation continuity, practice questions and feedback, and handling of off-topic questions. The corresponding screenshots are available in the `screenshots/` folder.
 
 ```text
 🧠 Welcome to your NLP Study Assistant!
