@@ -1,5 +1,5 @@
 from chatbot import ask_gemini, conversation, clear_conversation
-from prompts import practice_prompt, feedback_prompt
+from prompts import practice_prompt, feedback_prompt, concept_prompt
 
 print("""
 🧠 Welcome to your NLP Study Assistant!
@@ -14,6 +14,7 @@ while True:
         # """- multi-line string in Python (triple-quoted string)
         print(""" Available commands:
             /help      -  Show available commands
+            /learn     -  Start learning NLP concepts
             /practice  -  Start a practice question
             /summary   -  Show conversation summary (message count, tokens)
             /clear     -  Clear conversation history
@@ -22,6 +23,17 @@ while True:
             /quit      -  Exit the assistant
         """)
         continue # continues with the loop
+
+    if user_input == "/learn":
+        topic = input("Enter an NLP concept: ")
+
+        if not topic.strip():
+            print("Please enter a topic.")
+            continue
+
+        prompt = concept_prompt(topic)
+        ask_gemini(prompt)
+        continue
 
     if user_input == "/summary":
         message_count, approximate_tokens = conversation.get_summary()
@@ -87,6 +99,4 @@ while True:
         print("Goodbye!")
         break
 
-    # because normal queries are passed under concept prompt
-    # but no for other commands there's no 2nd argument
-    ask_gemini(user_input, use_concept_prompt=True)
+    ask_gemini(user_input)
