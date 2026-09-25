@@ -31,16 +31,15 @@ The assistant can explain NLP concepts, generate practice questions, provide fee
 
 ```text
 nlp-study-assistant/
-├── main.py              # Runs the chatbot and handles user commands
-├── chatbot.py           # Handles Gemini API requests, streaming, history, and errors
-├── prompts.py           # Contains the system prompt and reusable prompt templates
-├── config.py            # Loads the Gemini API key from environment variables
-├── requirements.txt     # Lists the Python dependencies
-├── README.md            # Project documentation
-├── DEBUGGING.md         # Development and debugging notes
-├── .env                 # Stores the Gemini API key locally
-├── .gitignore           # Specifies files that should not be tracked by Git
-└── .venv/               # Python virtual environment
+├── screenshots/          # Screenshots demonstrating example interactions
+├── main.py               # Runs the chatbot and handles user commands
+├── chatbot.py            # Handles Gemini API requests, streaming, history, and errors
+├── prompts.py            # Contains the system prompt and reusable prompt templates
+├── config.py             # Loads the Gemini API key from environment variables
+├── requirements.txt      # Lists the Python dependencies
+├── README.md             # Project documentation
+├── DEBUGGING.md          # Development and debugging notes
+└── .gitignore            # Specifies files that should not be tracked by Git
 ```
 
 ## Setup & Installation
@@ -139,6 +138,8 @@ The application includes error handling for common input and API-related problem
 * **Incomplete responses** - Detects when a streaming interaction does not complete successfully.
 
 ## Example Interaction
+
+The following examples demonstrate the assistant's main interactions, including NLP concept explanations, conversation continuity, practice questions and feedback, and handling of off-topic questions. The corresponding screenshots are available in the `screenshots/` folder.
 
 ```text
 🧠 Welcome to your NLP Study Assistant!
