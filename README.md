@@ -103,6 +103,7 @@ The assistant will display a welcome message and wait for user input.
 | Command     | Description                                                               |
 | ----------- | ------------------------------------------------------------------------- |
 | `/help`     | Show available commands                                                   |
+| `/learn`    | Start learning an NLP concept                                             |
 | `/practice` | Start an NLP practice question                                            |
 | `/summary`  | Show conversation summary, including message count and approximate tokens |
 | `/clear`    | Clear the conversation history and start a fresh conversation             |
