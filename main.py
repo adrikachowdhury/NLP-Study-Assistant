@@ -20,7 +20,7 @@ while True:
             /clear     -  Clear conversation history
             /trim      -  Trim conversation history
             /history   -  Show conversation history
-            /quit      -  Exit the conversation
+            /quit      -  Exit the conversation, or cancel the current learning/practice mode
         """)
         continue # continues with the loop
 

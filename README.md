@@ -108,7 +108,7 @@ The assistant will display a welcome message and wait for user input.
 | `/clear`    | Clear the conversation history and start a fresh conversation             |
 | `/trim`     | Keep only the specified number of recent messages                         |
 | `/history`  | Show the current conversation history                                     |
-| `/quit`     | Exit the conversation                                                     |
+| `/quit`     | Exit the conversation, or cancel the current learning/practice mode       |
 
 You can also type a normal NLP question without using a command. The assistant will send it to Gemini and return a streaming response.
 
