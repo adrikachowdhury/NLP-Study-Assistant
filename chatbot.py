@@ -67,7 +67,7 @@ def clear_conversation():
 
 def ask_gemini(question, use_concept_prompt=False): # reusability- not repeating the same API call code for every question
 
-    # handles empty/whitespaced inputalse
+    # handles empty/whitespaced input
     # checks if input is empty
     if not question.strip(): # removes whitespace from the beginning and end
         print("Please enter a valid question.")

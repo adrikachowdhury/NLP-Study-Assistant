@@ -20,12 +20,16 @@ while True:
             /clear     -  Clear conversation history
             /trim      -  Trim conversation history
             /history   -  Show conversation history
-            /quit      -  Exit the assistant
+            /quit      -  Exit the conversation
         """)
         continue # continues with the loop
 
     if user_input.lower() == "/learn":
         topic = input("Enter an NLP concept: ")
+
+        if topic.strip().lower() == "/quit":
+            print("Alright! Reach out to me whenever you need to learn any concept.")
+            continue
 
         if not topic.strip():
             print("Please enter a topic.")
@@ -56,6 +60,10 @@ while True:
     if user_input.lower() == "/practice":
         topic = input("Enter an NLP topic: ")
 
+        if topic.strip().lower() == "/quit":
+            print("Alright! Reach out to me whenever you need to practice any concept.")
+            continue
+
         # input validation
         # is there anything left after removing leading/trailing spaces from the string? if not, then it's empty
         if not topic.strip():
@@ -66,9 +74,9 @@ while True:
         practice_question = ask_gemini(prompt) # storing ans in a variable
 
         if practice_question != "":
-            student_answer = input("\nYour answer: ")
+            student_answer = input("\nYour answer: ").strip()
 
-            if not student_answer.strip():
+            if not student_answer:
                 print("Please provide an answer.")
                 continue
 
