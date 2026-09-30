@@ -11,7 +11,7 @@ while True:
     user_input = input("\nYou: ").strip()
 
     if user_input.lower() == "/help":
-        # """- multi-line string in Python (triple-quoted string)
+        # """: multi-line string in Python (triple-quoted string)
         print(""" Available commands:
             /help      -  Show available commands
             /learn     -  Start learning NLP concepts

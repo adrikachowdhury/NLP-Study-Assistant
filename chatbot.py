@@ -73,7 +73,7 @@ def ask_gemini(question, use_concept_prompt=False): # reusability- not repeating
         print("Please enter a valid question.")
         return ""
 
-    # adding previous_interaction_id = None here would
+    # adding previous_interaction_id=None here would
     # create/reset the local variable every time
     global previous_interaction_id # to modify the variable that was created outside the function
 

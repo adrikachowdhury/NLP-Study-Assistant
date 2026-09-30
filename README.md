@@ -104,7 +104,7 @@ The assistant will display a welcome message and wait for user input.
 | `/help`     | Show available commands                                                   |
 | `/learn`    | Start learning an NLP concept                                             |
 | `/practice` | Start an NLP practice question                                            |
-| `/summary`  | Show conversation summary, including message count and approximate tokens |
+| `/summary`  | Show conversation summary, including message counts and approximate tokens|
 | `/clear`    | Clear the conversation history and start a fresh conversation             |
 | `/trim`     | Keep only the specified number of recent messages                         |
 | `/history`  | Show the current conversation history                                     |
