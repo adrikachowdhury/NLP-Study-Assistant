@@ -8,9 +8,9 @@ Learn NLP concepts, practise your knowledge, and get feedback as you go!
 
 # continuing forever until we explicitly stop the loop by saying quit
 while True:
-    user_input = input("\nYou: ")
+    user_input = input("\nYou: ").strip()
 
-    if user_input == "/help":
+    if user_input.lower() == "/help":
         # """- multi-line string in Python (triple-quoted string)
         print(""" Available commands:
             /help      -  Show available commands
@@ -24,7 +24,7 @@ while True:
         """)
         continue # continues with the loop
 
-    if user_input == "/learn":
+    if user_input.lower() == "/learn":
         topic = input("Enter an NLP concept: ")
 
         if not topic.strip():
@@ -35,7 +35,7 @@ while True:
         ask_gemini(prompt)
         continue
 
-    if user_input == "/summary":
+    if user_input.lower() == "/summary":
         message_count, approximate_tokens = conversation.get_summary()
         
         print(f"\n--- Conversation Summary ---")
@@ -44,16 +44,16 @@ while True:
 
         continue
 
-    if user_input == "/clear":
+    if user_input.lower() == "/clear":
         clear_conversation()
         print("Conversation history cleared.")
         continue
 
-    if user_input == "/history":
+    if user_input.lower() == "/history":
         print(conversation.get_history())
         continue
 
-    if user_input == "/practice":
+    if user_input.lower() == "/practice":
         topic = input("Enter an NLP topic: ")
 
         # input validation
@@ -77,7 +77,7 @@ while True:
 
         continue
 
-    if user_input == "/trim":
+    if user_input.lower() == "/trim":
         try:
             max_messages = int(input("Enter the number of messages you want to keep: "))
             
@@ -95,7 +95,7 @@ while True:
             print("Invalid input. Please enter a valid positive integer.")
         continue
 
-    if user_input == "/quit":
+    if user_input.lower() == "/quit":
         print("Goodbye!")
         break
 
