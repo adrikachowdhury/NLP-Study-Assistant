@@ -16,7 +16,7 @@ The assistant can explain NLP concepts, generate practice questions, provide fee
 * **History management** - Allows the user to view, clear, and trim conversation history.
 * **Input validation** - Handles empty or invalid user inputs.
 * **Error handling** - Handles API errors and provides user-friendly error messages.
-* **Retry mechanism** - Automatically retries certain temporary API errors using exponential backoff.
+* **Retry mechanism** - Automatically retries once after a short wait when a temporary API error occurs.
 * **Environment variables** - Keeps the Gemini API key in a `.env` file rather than directly in the source code.
 
 ## Technologies Used
