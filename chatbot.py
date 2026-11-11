@@ -147,7 +147,7 @@ def ask_gemini(question, use_concept_prompt=False): # reusability- not repeating
                 or "high demand" in error_message.lower()
             ):
                 if attempt < 1: # retry if attempt is available
-                    wait_time = 2 ** attempt # giving increasingly more time (exponential) to recover
+                    wait_time = 2 ** attempt # short wait before the single retry
                     print(f"\nTemporary error. Retrying in {wait_time} seconds...")
                     time.sleep(wait_time) # pauses for that time and continues with the loop
                 else:
